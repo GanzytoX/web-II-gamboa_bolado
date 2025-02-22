@@ -1,42 +1,56 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  background: #f4f8ff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
 }
 
+/* Título principal */
 h1 {
-    color: #333;
-    margin-bottom: 20px;
+  color: #0044cc;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
+/* Información de totales */
 p {
-    font-size: 18px;
-    color: #555;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin: 5px 0;
 }
 
+/* Contenedores principales */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
+/* Estilos para cada orden */
 .container div {
-    background: #e3e3e3;
-    padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    text-align: left;
+  /* background: #e0ebff; */
+  color: #0044cc;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
 }
 
-.container div:nth-child(odd) {
-    background: #d1d1d1;
+.container div:hover {
+  background: #cce0ff;
 }

@@ -11,11 +11,8 @@ def indexUsers(request):
     }
     return render(request, 'users/index.html', data)
 
-# def createUserView(request):
-#     return render(request, 'users/create.html')
-
 def createUser(request):
-    data = {}  # Inicializamos data como un diccionario vacío
+    data = {}
 
     if request.method == 'POST':
         try:
@@ -23,7 +20,7 @@ def createUser(request):
             email = request.POST.get('email')
             age = request.POST.get('age')
             rfc = request.POST.get('rfc')
-            photo = request.POST.get('photo')  # Usamos .get() para evitar errores si no se envía un archivo
+            photo = request.POST.get('photo') 
 
             user = Users(name=name, email=email, age=age, rfc=rfc, photo=photo)
             user.save()
@@ -38,21 +35,19 @@ def createUser(request):
             data["message"] = str(e)
             data["status"] = "error"
 
-    return render(request, 'users/create.html', data)  # Se ejecuta tanto para GET como para POST
+    return render(request, 'users/create.html', data)
 
 def userDetail(request, id):
-    user = get_object_or_404(Users, id=id)  # Obtener el usuario o mostrar 404
+    user = get_object_or_404(Users, id=id)
 
     if request.method == "POST":
-        # Solo actualizar los campos permitidos
         user.name = request.POST.get('name')
         user.email = request.POST.get('email')
         user.rfc = request.POST.get('rfc')
 
-        # Guardar los cambios en la base de datos
         user.save()
 
-        return redirect('userDetail', id=user.id)  # Redirigir al detalle del usuario actualizado
+        return redirect('userDetail', id=user.id)
 
     return render(request, 'users/detail.html', {"user": user})
 

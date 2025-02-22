@@ -1,1 +1,64 @@
-venv
+# Archivos y carpetas de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno virtual (venv)
+venv/
+env/
+.virtualenv/
+
+# Archivos de configuración de entornos
+*.env
+*.venv
+.env.local
+.env.production
+.env.development
+.env.test
+.env.*
+
+# Dependencias de paquetes
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Archivos de compilación
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Configuración de IDEs y editores de código
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Archivos de logs y bases de datos locales
+logs/
+*.log
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Configuración de Django y migraciones temporales
+*.mo
+*.pot
+*.pid
+*.seed
+migrations/
+*/migrations/*.py
+*/migrations/*.pyc
+
+# Archivos de Node.js (si usas npm/yarn para frontend)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Archivos de Docker (si usas contenedores)
+.dockerignore
+docker-compose.override.yml
+
+# Cache y archivos temporales de Django
+static/
+tmp/
