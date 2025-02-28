@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+import json
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from .models import Users
 from django.shortcuts import render, get_object_or_404, redirect
@@ -10,6 +11,17 @@ def indexUsers(request):
         "titulo": "Lista de clientes",
     }
     return render(request, 'users/index.html', data)
+
+def createUserView(request):
+    return render(request, 'users/create.html')
+
+def createUserByFetch(request):
+    body_unicode = request.body.decode('utf-8')
+    body = json.loads(body_unicode)
+    
+    return JsonResponse({
+        "NOMBRE_RECIBIDO": body.get('name'),
+    })
 
 def createUser(request):
     data = {}
